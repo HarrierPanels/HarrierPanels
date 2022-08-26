@@ -1,0 +1,789 @@
+<Gauge Name="Tu-134 Cockpit Sounds" Version="1.0">
+
+   <Element>
+      <Select>
+         <Value>
+		 
+			<!-- Window --> 
+			
+	   (* Captain *)	
+       (L:fort,percent) 0.1 &gt; (L:WindowPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Window_o,enum) }
+       (L:fort,percent) 99.9 &lt; (L:WindowPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Window_c,enum) }
+       (L:fort,percent) (&gt;L:WindowPrevious,number)
+
+	   (* First Officer *)
+       (L:fort2p,percent) 0.1 &gt; (L:WindowFOPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Window_o,enum) }
+       (L:fort2p,percent) 99.9 &lt; (L:WindowFOPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Window_c,enum) }
+       (L:fort2p,percent) (&gt;L:WindowFOPrevious,number)	   
+	   
+			<!-- Armrest --> 	   
+
+	   (* Captain *)	
+       (L:podlokotnik,percent) 0.1 &gt; (L:ArmrestPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Armrest_o,enum) }
+       (L:podlokotnik,percent) 99.9 &lt; (L:ArmrestPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Armrest_c,enum) }
+       (L:podlokotnik,percent) (&gt;L:ArmrestPrevious,number)
+
+	   (* First Officer *)
+       (L:podlokotnik2p,percent) 0.1 &gt; (L:ArmrestFOPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Armrest_o,enum) }
+       (L:podlokotnik2p,percent) 99.9 &lt; (L:ArmrestFOPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Armrest_c,enum) }
+       (L:podlokotnik2p,percent) (&gt;L:ArmrestFOPrevious,number)
+
+			<!-- Flight Engineer Seat --> 	   
+
+       (L:KresloBM,percent) 0.1 &gt; (L:FESeatPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:FESeat_o,enum) }
+       (L:KresloBM,percent) 99.9 &lt; (L:FESeatPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:FESeat_c,enum) }
+       (L:KresloBM,percent) (&gt;L:FESeatPrevious,number) 
+	   
+			<!-- Flight Deck Door --> 	   
+
+       (L:ruchka_dveri,percent) 0.1 &gt; (L:FLTDKDoorPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:FLTDKDoor_o,enum) }
+       (L:ruchka_dveri,percent) 99.9 &lt; (L:FLTDKDoorPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:FLTDKDoor_c,enum) }
+       (L:ruchka_dveri,percent) (&gt;L:FLTDKDoorPrevious,number) 	   
+
+			<!-- Engine Start Panel Cap --> 	   
+
+       (L:zapusk,percent) 0.1 &gt; (L:PanelCapPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:PanelCap_o,enum) }
+       (L:zapusk,percent) 99.9 &lt; (L:PanelCapPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:PanelCap_c,enum) }
+       (L:zapusk,percent) (&gt;L:PanelCapPrevious,number) 
+
+			<!-- Engine Cut-Off Levers --> 	   
+
+	   (* 1 *)	
+       (L:Rod1,percent) 0.1 &gt; (L:Cutoff_Lvr1Previous,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Cutoff_Lvr,enum) }
+       (L:Rod1,percent) 99.9 &lt; (L:Cutoff_Lvr1Previous,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Cutoff_Lvr,enum) }
+       (L:Rod1,percent) (&gt;L:Cutoff_Lvr1Previous,number)
+
+	   (* 2 *)
+       (L:Rod2,percent) 0.1 &gt; (L:Cutoff_Lvr2Previous,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Cutoff_Lvr,enum) }
+       (L:Rod2,percent) 99.9 &lt; (L:Cutoff_Lvr2Previous,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Cutoff_Lvr,enum) }
+       (L:Rod2,percent) (&gt;L:Cutoff_Lvr2Previous,number)
+
+			<!-- Interceptor Switch --> 	   
+
+       (L:Interseptor Switch,bool) (L:Interseptor Switch Armed,bool) != 
+       if{ 1 (&gt;L:Tu134_LatchSwitch,number) (L:Interseptor Switch,bool) (&gt;L:Interseptor Switch Armed,bool) } 	   
+	   
+			<!-- Sunshade Window --> 	   
+
+	   (* Captain *)	
+       (L:glass,percent) 0.1 &gt; (L:glassPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Sunshade_c,enum) }
+       (L:glass,percent) 99.9 &lt; (L:glassPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Sunshade_o,enum) }
+       (L:glass,percent) (&gt;L:glassPrevious,number)
+
+	   (* First Officer *)
+       (L:glass2p,percent) 0.1 &gt; (L:glassFOPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:SunshadeFO_c,enum) }
+       (L:glass2p,percent) 99.9 &lt; (L:glassFOPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:SunshadeFO_o,enum) }
+       (L:glass2p,percent) (&gt;L:glassFOPrevious,number) 
+	   
+			<!-- Wiper Switch --> 	   
+
+	   (* Left *)	
+       (L:wiperL,number) 1.1 &gt; (L:WiperLPrevious,number) 1.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }
+       (L:wiperL,number) 2.1 &gt; (L:WiperLPrevious,number) 2.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }	   
+       (L:wiperL,number) 2.9 &lt; (L:WiperLPrevious,number) 2.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }
+       (L:wiperL,number) 1.9 &lt; (L:WiperLPrevious,number) 1.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }	   
+       (L:wiperL,number) (&gt;L:WiperLPrevious,number)
+
+	   (* Right *)
+       (L:wiperR,number) 1.1 &gt; (L:WiperRPrevious,number) 1.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }
+       (L:wiperR,number) 2.1 &gt; (L:WiperRPrevious,number) 2.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }	   
+       (L:wiperR,number) 2.9 &lt; (L:WiperRPrevious,number) 2.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }
+       (L:wiperR,number) 1.9 &lt; (L:WiperRPrevious,number) 1.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:WiperSwitch,enum) }	   
+       (L:wiperR,number) (&gt;L:WiperRPrevious,number) 
+
+			<!-- Wiper Speed --> 	
+
+	   (* Slow *)
+	   (L:wiper_sound1,bool) 
+       if{ 2 (&gt;L:Wiper_slow,number) } els{ 0 (&gt;L:Wiper_slow,number) }
+	   
+	   (* Fast *)
+	   (L:wiper_sound2,bool) 
+       if{ 2 (&gt;L:Wiper_fast,number) } els{ 0 (&gt;L:Wiper_fast,number) }	   
+	   
+
+			<!-- PO-500 --> 
+			
+       (L:PO500kolp,number) (L:PO500kolp_ARMED,number) != 
+       if{ 1 (&gt;L:Tu134_Button,number) (L:PO500kolp,number) (&gt;L:PO500kolp_ARMED,number) } 
+	   
+       (L:PO500_on,bool) (L:PO500ARMED,bool) ! &amp;&amp; 
+       if{ 1 (&gt;L:Po500StartSound,number) 1 (&gt;L:PK_ON,number) 1 (&gt;L:PO500ARMED,bool) 1 (&gt;L:PO500LOOP,bool)  
+	   0 (&gt;L:Po500StopSound,number) } 	   
+	   
+	   (L:PO500LOOP,bool) (L:TimerLoop1,seconds) 0 == &amp;&amp; 
+		if{ 
+			(P:ABSOLUTE TIME,seconds) (&gt;L:TimerLoop1,seconds)
+			1 (&gt;L:ARMEDPO500LOOP,bool)          (* Loop trigger timer *)
+		}
+			(P:ABSOLUTE TIME,seconds) (L:TimerLoop1,seconds) 5.9 + &gt; 
+			(L:ARMEDPO500LOOP,bool) &amp;&amp;          (* delay 5.9 sec *)
+		if{ 
+               2 (&gt;L:PO-500Loop,number) 
+               0 (&gt;L:ARMEDPO500LOOP,bool) 
+               0 (&gt;L:PO500LOOP,bool) 			   
+			   0 (&gt;L:TimerLoop1,seconds) 
+			   1 (&gt;L:PO500LOOPARMED,bool) 
+			}			
+
+       (L:PO500_on,bool) ! (L:PO500ARMED,bool) &amp;&amp; (L:PO500LOOPARMED,bool) &amp;&amp; 
+       if{ 0 (&gt;L:Po500StartSound,number) 0 (&gt;L:PO-500Loop,number) 1 (&gt;L:Po500StopSound,number) 
+	   1 (&gt;L:PK_OFF,number) 0 (&gt;L:PK_ON,number) 0 (&gt;L:PO500ARMED,bool) 0 (&gt;L:PO500LOOPARMED,bool) } 
+
+			<!-- PO-4500 --> 
+  
+       (L:PO4500,bool) (L:PO4500ARMED,bool) ! &amp;&amp; (L:OSN_27V,volts) 24.5 &gt; &amp;&amp;  
+       if{ 1 (&gt;L:Po4500StartSound,number) 1 (&gt;L:PO4500ARMED,bool) 1 (&gt;L:PO4500LOOP,bool) 0 (&gt;L:Po4500StopSound,number) } 	   
+	   
+	   (L:PO4500LOOP,bool) (L:TimerLoop2,seconds) 0 == &amp;&amp; 
+		if{ 
+			(P:ABSOLUTE TIME,seconds) (&gt;L:TimerLoop2,seconds)
+			1 (&gt;L:ARMEDPO4500LOOP,bool)          (* Loop trigger timer *)
+		}
+			(P:ABSOLUTE TIME,seconds) (L:TimerLoop2,seconds) 3.5 + &gt; 
+			(L:ARMEDPO4500LOOP,bool) &amp;&amp;          (* delay 3.5 sec *)
+		if{ 
+               2 (&gt;L:PO-4500Loop,number) 
+               0 (&gt;L:ARMEDPO4500LOOP,bool) 
+               0 (&gt;L:PO4500LOOP,bool) 			   
+			   0 (&gt;L:TimerLoop2,seconds) 
+			   1 (&gt;L:PO4500LOOPARMED,bool) 
+			}			
+
+       (L:PO4500,bool) ! (L:OSN_27V,volts) 24.5 &lt; || (L:PO4500ARMED,bool) &amp;&amp; (L:PO4500LOOPARMED,bool) &amp;&amp; 
+       if{ 0 (&gt;L:Po4500StartSound,number) 0 (&gt;L:PO-4500Loop,number) 1 (&gt;L:Po4500StopSound,number) 
+	   0 (&gt;L:PO4500ARMED,bool) 0 (&gt;L:PO4500LOOPARMED,bool) } 
+
+			<!-- PT-1500 --> 
+  
+       (L:PT1500,bool) (L:PT1500ARMED,bool) ! &amp;&amp; (L:OSN_27V,volts) 24.5 &gt; &amp;&amp;  
+       if{ 1 (&gt;L:PT1500StartSound,number) 1 (&gt;L:PT1500ARMED,bool) 1 (&gt;L:PT1500LOOP,bool) 0 (&gt;L:PT1500StopSound,number) } 	   
+	   
+	   (L:PT1500LOOP,bool) (L:TimerLoop3,seconds) 0 == &amp;&amp; 
+		if{ 
+			(P:ABSOLUTE TIME,seconds) (&gt;L:TimerLoop3,seconds)
+			1 (&gt;L:ARMEDPT1500LOOP,bool)          (* Loop trigger timer *)
+		}
+			(P:ABSOLUTE TIME,seconds) (L:TimerLoop3,seconds) 3.5 + &gt; 
+			(L:ARMEDPT1500LOOP,bool) &amp;&amp;          (* delay 3.5 sec *)
+		if{ 
+               2 (&gt;L:PT-1500Loop,number) 
+               0 (&gt;L:ARMEDPT1500LOOP,bool) 
+               0 (&gt;L:PT1500LOOP,bool) 			   
+			   0 (&gt;L:TimerLoop3,seconds) 
+			   1 (&gt;L:PT1500LOOPARMED,bool) 
+			}			
+
+       (L:PT1500,bool) ! (L:OSN_27V,volts) 24.5 &lt; || (L:PT1500ARMED,bool) &amp;&amp; (L:PT1500LOOPARMED,bool) &amp;&amp; 
+       if{ 0 (&gt;L:PT1500StartSound,number) 0 (&gt;L:PT-1500Loop,number) 1 (&gt;L:PT1500StopSound,number) 
+	   0 (&gt;L:PT1500ARMED,bool) 0 (&gt;L:PT1500LOOPARMED,bool) } 	   
+
+	   <!-- Bus Connect --> 
+
+      (L:connect_lock,bool) (L:connect_lock Armed,bool) != 
+      if{ 1 (&gt;L:BortSet,number) (L:connect_lock,bool) (&gt;L:connect_lock Armed,bool) } 
+
+	   <!-- Rudder Trim --> 
+	   
+       (L:tumbtrim,percent) 0.1 &gt; (L:tumbtrimPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:tumbtrim,percent) 99.9 &lt; (L:tumbtrimPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:tumbtrim,percent) -99.9 &lt; (L:tumbtrimPrevious,number) -99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:tumbtrim,percent) -0.1 &gt; (L:tumbtrimPrevious,number) -0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:tumbtrim,percent) (&gt;L:tumbtrimPrevious,number) 
+
+	   <!-- Autothrottle Control Switch --> 
+	   
+       (L:ATCN,percent) 0.1 &gt; (L:ATCNPrevious,number) 0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:ATCN,percent) 99.9 &lt; (L:ATCNPrevious,number) 99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:ATCN,percent) -99.9 &lt; (L:ATCNPrevious,number) -99.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:ATCN,percent) -0.1 &gt; (L:ATCNPrevious,number) -0.1 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Tu134_Selector,enum) }
+       (L:ATCN,percent) (&gt;L:ATCNPrevious,number) 
+
+	   <!-- Flaps Handle --> 
+
+       (A:FLAPS HANDLE PERCENT, percent) 0.1 &gt; (L:HANDLErevious,number) 0.1 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_dn,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) 34.1 &gt; (L:HANDLErevious,number) 34.1 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_dn,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) 51.1 &gt; (L:HANDLErevious,number) 51.1 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_dn,enum) }	   
+       (A:FLAPS HANDLE PERCENT, percent) 67.1 &gt; (L:HANDLErevious,number) 67.1 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_dn,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) 84.1 &gt; (L:HANDLErevious,number) 84.1 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_dn,enum) }	   
+       (A:FLAPS HANDLE PERCENT, percent) 84.1 &lt; (L:HANDLErevious,number) 84.1 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_up,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) 67.1 &lt; (L:HANDLErevious,number) 67.1 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_up,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) 51.1 &lt; (L:HANDLErevious,number) 51.1 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_up,enum) }	   
+       (A:FLAPS HANDLE PERCENT, percent) 34.1 &lt; (L:HANDLErevious,number) 34.1 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Flaps_up,enum) }	   
+	   (A:FLAPS HANDLE PERCENT, percent) 0.1 &lt; (L:HANDLErevious,number) 0.1 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Flaps_up,enum) }
+       (A:FLAPS HANDLE PERCENT, percent) (&gt;L:HANDLErevious,number) 	
+	   
+	   <!-- Gear Handle --> 
+	   
+	   (* Gear Down *)	
+       (A:Gear handle position,percent) 50 &gt; (L:HandlePrevious,number) 50 &lt; &amp;&amp; (L:HandleDNArmed,bool) ! &amp;&amp; 
+	   if{ 1 (&gt;L:Gear_DN,enum) 1 (&gt;L:HandleDNArmed,bool) } 
+
+	   (* Gear Up *)	
+       (A:Gear handle position,percent) 50 &lt; (L:HandlePrevious,number) 50 &gt; &amp;&amp; (L:HandleDNArmed,bool) ! &amp;&amp; 
+	   if{ 1 (&gt;L:Gear_UP,enum) 1 (&gt;L:HandleUPArmed,bool) }       
+
+	   (* Gear Handle Neutral *)		   
+	   (A:Gear center position,percent) 0 &gt; (A:Gear right position,percent) 0 &gt; || (A:Gear left position,percent) 0 &gt; || 
+	   (A:Gear center position,percent) near 100 == (A:Gear right position,percent) near 100 == || 
+	   (A:Gear left position,percent) near 100 == || &amp;&amp; 
+	   (L:HandleDNArmed,bool) &amp;&amp; 
+
+	   if{
+               1 (&gt;L:Gear_N,number)
+			   0 (&gt;L:HandleDNArmed,bool)                 (* Handle Reset *)
+			}	
+
+	   (* Gear Handle Neutral *)				
+	   (A:Gear center position,percent) 100 &lt; (A:Gear right position,percent) 100 &lt; || (A:Gear left position,percent) 100 &lt; || 
+	   (A:Gear center position,percent) near 0 == (A:Gear right position,percent) near 0 == || 
+	   (A:Gear left position,percent) near 0 == || &amp;&amp; 
+	   (L:HandleUPArmed,bool) &amp;&amp; 
+
+	   if{
+               1 (&gt;L:Gear_N,number)
+			   0 (&gt;L:HandleUPArmed,bool)                 (* Handle Reset *)			   
+			}	
+
+	   (A:Gear handle position,percent) (&gt;L:HandlePrevious,number) 
+
+	   <!-- EGT Control --> 	   
+
+	  (* 1 *)	
+      (L:prt1c,number) (L:prt1c Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:prt1c,number) (&gt;L:prt1c Armed,number) }
+
+	  (* 2 *)
+      (L:prt2c,number) (L:prt2c Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:prt2c,number) (&gt;L:prt2c Armed,number) }
+
+	   <!-- Altimeter UVID-15F --> 	 
+	   
+      (L:uvidf kolp,number) (L:uvidf kolp Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:uvidf kolp,number) (&gt;L:uvidf kolp Armed,number) }	  	  
+
+	   <!-- Hydraulic Accumulator Charge Button --> 	 
+	  
+      (L:zaryad_gak,number) (L:zaryad_gak Armed,number) != 
+      if{ 1 (&gt;L:Tu134_Button,number) (L:zaryad_gak,number) (&gt;L:zaryad_gak Armed,number) } 
+
+	   <!-- SVK Test --> 	 
+
+      (L:Test SVK,number) 78 == 
+      if{ 1 (&gt;L:Tu134_Button,number) }	
+
+		 (L:Test SVK,number) 0 &gt; if{ (L:Test SVK,number) -- (>L:Test SVK,number) } 
+         (L:Test SVK,number) 20 == if{ 1 (>L:ABSU_PT,bool) 1 (>L:ABSU_BK,bool) 1 (>L:ABSU_AT,bool) 1 (>L:ABSU_YK,bool) } 
+         (L:Test SVK,number) 1 == if{ 0 (>L:ABSU_PT,bool) 0 (>L:ABSU_BK,bool) 0 (>L:ABSU_AT,bool) 0 (>L:ABSU_YK,bool) 
+		 8 (>L:Siren2,number) }	
+
+	   <!-- PPS Lamp Test --> 
+	   
+      (L:PPS check,number) (L:PPS check Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:PPS check,number) (&gt;L:PPS check Armed,number) } 
+
+	   <!-- Transponder --> 	
+
+      (A:Transponder1 code,number) (L:Transponder1,number) != 
+	  if{ 1 (&gt;L:GALET_SOUND,number) (A:Transponder1 code,number) (&gt;L:Transponder1,number) } 	    
+	  
+	   <!-- Bleed Air Control -->
+
+	  (* Left *)	   
+      (L:Left_air,number) (L:Left_air Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Left_air,number) (&gt;L:Left_air Armed,number) } 
+	  
+	  (* Right *)	  
+      (L:Right_air,number) (L:Right_air Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Right_air,number) (&gt;L:Right_air Armed,number) }   
+
+      <!-- ECS Panel -->
+
+	  (* Turbofridge *) 	  
+      (L:Air_cycle_mashine,number) (L:Air_cycle_mashine Armed,number) != (L:Air_cycle_mashine,number) 1 != &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Air_cycle_mashine,number) (&gt;L:Air_cycle_mashine Armed,number) }
+
+	  (* Air-to-air Radiator *) 
+      (L:Heat_exchanger,number) (L:Heat_exchanger Armed,number) != (L:Heat_exchanger,number) 1 != &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Heat_exchanger,number) (&gt;L:Heat_exchanger Armed,number) } 
+
+	  (* Ccockpit Heat *) 
+      (L:Crew_heat,number) (L:Crew_heat Armed,number) != (L:Crew_heat,number) 1 != &amp;&amp;  
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Crew_heat,number) (&gt;L:Crew_heat Armed,number) } 
+
+	  (* Forward Cabin Heat *) 
+      (L:Cabin_forw_heat,number) (L:Cabin_forw_heat Armed,number) != (L:Cabin_forw_heat,number) 1 != &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Cabin_forw_heat,number) (&gt;L:Cabin_forw_heat Armed,number) }
+
+	  (* Back Cabin Heat *) 
+      (L:Cabin_back_heat,number) (L:Cabin_back_heat Armed,number) != (L:Cabin_back_heat,number) 1 != &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:Cabin_back_heat,number) (&gt;L:Cabin_back_heat Armed,number) }
+
+      <!-- Autopilot --> 
+
+	  (* Bank Control *) 	  
+      (L:AP_BankH,number) (L:AP_BankH Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:AP_BankH,number) (&gt;L:AP_BankH Armed,number) }
+
+	  (* Pitch Control *) 
+      (L:AP_PitcK,number) (L:AP_PitcK Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:AP_PitcK,number) (&gt;L:AP_PitcK Armed,number) }
+
+	  (* Localizer Hold *) 	  
+      (L:AP_KAp,number) (L:AP_KAp Armed,number) != 
+      if{ (L:AP_KAp,number) (&gt;L:AP_KAp Armed,number) 1 (&gt;L:AP_KAp Pressed,bool) }
+      (L:AP_KAp,bool) ! (L:AP_KAp Pressed,bool) &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Button,number) 0 (&gt;L:AP_KAp Pressed,bool) } 	  
+	  
+	  (* Glideslope Hold *) 	
+      (L:AP_GAp,number) (L:AP_GAp Armed,number) != 
+      if{ (L:AP_GAp,number) (&gt;L:AP_GAp Armed,number) 1 (&gt;L:AP_GAp Pressed,bool) } 
+      (L:AP_GAp,bool) ! (L:AP_GAp Pressed,bool) &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Button,number) 0 (&gt;L:AP_GAp Pressed,bool) } 	  
+
+	  (* Altitude Hold *) 	
+      (L:AP_kv,number) (L:AP_kv Armed,number) != 
+      if{ (L:AP_kv,number) (&gt;L:AP_kv Armed,number) 1 (&gt;L:AP_kv Pressed,bool) } 
+      (L:AP_kv,bool) ! (L:AP_kv Pressed,bool) &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Button,number) 0 (&gt;L:AP_kv Pressed,bool) } 	  
+
+      <!-- Autopilot AP+ANU --> 
+	  
+      (L:anu_btn,number) (L:anu_btn Armed,number) !=
+      if{ (L:anu_btn,number) (&gt;L:anu_btn Armed,number) 1 (&gt;L:anu_btn Pressed,bool) } 
+      (L:anu_btn,bool) ! (L:anu_btn Pressed,bool) &amp;&amp; 
+      if{ 1 (&gt;L:Tu134_Button,number) 0 (&gt;L:anu_btn Pressed,bool) } 	 
+	  
+      <!-- EGT Indicator Check --> 
+	  
+      (L:IT control,number) (L:IT control Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:IT control,number) (&gt;L:IT control Armed,number) } 	   
+
+      <!-- Radio Selector Panel --> 
+
+	  (* RSBN / VOR1 / VOR2 *)  	  
+      (L:PSP mode,number) (L:PSP mode Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:PSP mode,number) (&gt;L:PSP mode Armed,number) }
+
+	  <!-- Altimeter UVID-15F -->   
+
+	  (* Cap *)  	  
+      (L:UVID_Cov,percent) 0.1 &gt; (L:UVID_Cov Armed,number) 0.1 &lt; &amp;&amp; 
+      if{ 1 (&gt;L:Uvid_Cap_Open,enum) } 
+      (L:UVID_Cov,percent) 99.9 &lt; (L:UVID_Cov Armed,number) 99.9 &gt; &amp;&amp; 
+      if{ 1 (&gt;L:Uvid_Cap_Closed,enum) } 
+      (L:UVID_Cov,percent) (&gt;L:UVID_Cov Armed,number) 	 	   
+	  
+	  (* Test Button *)  	  	  
+      (L:UVIDF test,number) (L:UVIDF test Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:UVIDF test,number) (&gt;L:UVIDF test Armed,number) }	  
+
+	  (* Altimeter Setting Adjustment Knob *)  	  
+      (A:Kohlsman setting MB,mbar) (L:Kohlsman,number) != 
+	  if{ 1 (&gt;L:Tu134_Selector,number) (A:Kohlsman setting MB,mbar) (&gt;L:Kohlsman,number) } 	   	  
+	  
+	  <!-- Altimeter UVID-30-15 -->   	
+
+	  (* Cap *)  	  
+      (L:UVID_Cover,percent) 0.1 &gt; (L:UVID_Cover Armed,number) 0.1 &lt; &amp;&amp; 
+      if{ 1 (&gt;L:Uvid_Cap_Open,enum) } 
+      (L:UVID_Cover,percent) 99.9 &lt; (L:UVID_Cover Armed,number) 99.9 &gt; &amp;&amp; 
+      if{ 1 (&gt;L:Uvid_Cap_Closed,enum) } 
+      (L:UVID_Cover,percent) (&gt;L:UVID_Cover Armed,number) 	 	  
+	  
+	  (* Test Button *)  	  
+      (L:UVID Test,number) (L:UVID Test Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:UVID Test,number) (&gt;L:UVID Test Armed,number) }	  
+
+	  <!-- HSI NKP-4 -->   
+	  	  
+      (L:NKP Course Selector,number) (L:NKP Course Selector Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector3,number) (L:NKP Course Selector,number) (&gt;L:NKP Course Selector Armed,number) }   	  
+
+	  <!-- RA UV-5K -->   
+	  
+      (A:Decision height, meters) (L:Decision,number) != 
+	  if{ 1 (&gt;L:Tu134_Selector,number) (A:Decision height, meters) (&gt;L:Decision,number) } 	
+
+	  <!-- Landing Gear / Flaps Indicator Lights PPS-2MK -->   	  
+	  
+      (L:GCheck,number) (L:GCheck Armed,number) != 
+      if{ 1 (&gt;L:Tu134_Button,number) (L:GCheck,number) (&gt;L:GCheck Armed,number) }  	  
+
+	  <!-- Fuelmeter Switch -->  
+
+      (L:TM pos,number) (L:TM pos Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:TM pos,number) (&gt;L:TM pos Armed,number) } 
+	  
+	  <!-- Thermometer TUE-48 Switch -->  	  
+	  
+      (L:Tue_48_sw,number) (L:Tue_48_sw Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:Tue_48_sw,number) (&gt;L:Tue_48_sw Armed,number) }   	  
+
+	  <!-- 2077 Cabin Pressure Control System -->  	  
+
+	  (* Valve *) 	  
+      (L:2077_main,number) (L:2077_main Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:2077_main,number) (&gt;L:2077_main Armed,number) } 
+	  (* 2077 Overpressure Switch *)  
+      (L:Izb_reg,number) (L:Izb_reg Armed,number) != 
+      if{ 1 (&gt;L:Tu134_Button,number) (L:Izb_reg,number) (&gt;L:Izb_reg Armed,number) }    	  
+	  (* Pressurisation Knob *) 	  
+      (L:germ_reg,number) (L:germ_reg Armed,number) != 
+      if{ 1 (&gt;L:Tu134_Button,number) (L:germ_reg,number) (&gt;L:germ_reg Armed,number) }	
+	  
+	  <!-- Cabin Temperature AC Switches -->  	  	  
+	  
+	  (* Ventilation *) 
+      (L:zadvent_t,number) (L:zadvent_t Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:zadvent_t,number) (&gt;L:zadvent_t Armed,number) }
+	  (* Cockpit *) 
+      (L:zadcrew_t,number) (L:zadcrew_t Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:zadcrew_t,number) (&gt;L:zadcrew_t Armed,number) }
+	  (* Forward Cabin *) 
+      (L:zadforv_t,number) (L:zadforv_t Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:zadforv_t,number) (&gt;L:zadforv_t Armed,number) }
+	  (* Backward Cabin *) 
+      (L:zadback_t,number) (L:zadback_t Armed,number) != 
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:zadback_t,number) (&gt;L:zadback_t Armed,number) }
+
+			<!-- Throttle Quadrant --> 	   
+
+	   (* 1 *)	
+       (A:General eng1 throttle lever position,percent) 0.9 &lt; (L:Eng1Next,number) 0.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Throttle_Idle,enum) }
+       (A:General eng1 throttle lever position,percent) 96.9 &gt; (L:Eng1Next,number) 96.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Throttle_Full,enum) }
+       (A:General eng1 throttle lever position,percent) near 50 &gt; (L:Eng1Next,number) 50 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Mid,enum) } 
+       (A:General eng1 throttle lever position,percent) near 50 &lt; (L:Eng1Next,number) 50 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Mid,enum) } 	   
+
+	   (* Reverse 1 *)		   
+       (A:General eng1 throttle lever position, percent) -38 &lt; (L:Eng1Next,number) -38 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Reverse_ON,enum) } 
+       (A:General eng1 throttle lever position, position) -0.02 &gt; (L:Eng1Next,number) -0.02 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Reverse_OFF,enum) } 	  	   
+
+       (A:General eng1 throttle lever position,percent) (&gt;L:Eng1Next,number)    
+	   
+	   (* 2 *)	
+       (A:General eng2 throttle lever position,percent) 0.9 &lt; (L:Eng2Next,number) 0.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Throttle_Idle,enum) } 
+       (A:General eng2 throttle lever position,percent) 96.9 &gt; (L:Eng2Next,number) 96.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Throttle_Full,enum) }
+       (A:General eng2 throttle lever position,percent) near 50 &gt; (L:Eng2Next,number) 50 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Mid,enum) } 
+       (A:General eng2 throttle lever position,percent) near 50 &lt; (L:Eng2Next,number) 50 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Mid,enum) } 	   
+
+	   (* Reverse 2 *)		   
+       (A:General eng2 throttle lever position, percent) -38 &lt; (L:Eng2Next,number) -38 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Reverse_ON,enum) } 
+       (A:General eng2 throttle lever position, position) -0.02 &gt; (L:Eng2Next,number) -0.02 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Throttle_Reverse_OFF,enum) } 	   
+
+       (A:General eng2 throttle lever position,percent) (&gt;L:Eng2Next,number) 	   
+  
+			<!-- Elevator Trim --> 	   
+	   
+       (A:Elevator Trim Position,degrees) (L:Elevator Trim Position Armed,number) !=
+       if{ 1 (&gt;L:TrimSound,number) (A:Elevator Trim Position,degrees) (&gt;L:Elevator Trim Position Armed,number) } 	
+
+			<!-- APU Cover --> 	
+
+      (L:vsu_cover,percent) 0.1 &gt; (L:vsu_cover Armed,number) 0.1 &lt; &amp;&amp; 
+      if{ 1 (&gt;L:APU_Cover_o,enum) } 
+      (L:vsu_cover,percent) 99.9 &lt; (L:vsu_cover Armed,number) 99.9 &gt; &amp;&amp; 
+      if{ 1 (&gt;L:APU_Cover_c,enum) } 
+      (L:vsu_cover,percent) (&gt;L:vsu_cover Armed,number) 	 
+
+			<!-- Vibration Meter IV-50P Lamp Test --> 	
+
+	  (* L *)				
+      (L:lamptest1,number) (L:lamptest1 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector1,number) (L:lamptest1,number) (&gt;L:lamptest1 Armed,number) } 
+
+	  (* R *)				
+      (L:lamptest2,number) (L:lamptest2 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector1,number) (L:lamptest2,number) (&gt;L:lamptest2 Armed,number) } 
+
+			<!-- APU Lamp Test --> 		  
+
+      (L:APU Check,number) (L:APU Check Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:APU Check,number) (&gt;L:APU Check Armed,number) }			
+
+			<!-- IV-50P Vibration Check --> 		    
+	  
+      (L:EV control,number) (L:EV control Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:EV control,number) (&gt;L:EV control Armed,number) } 
+
+			<!-- Lights Test --> 		    
+
+      (L:AnnCheck,percent) 0.1 &gt; (L:AnnCheck Armed,number) 0.1 &lt; &amp;&amp; 
+      if{ 1 (&gt;L:Pressed_DN,enum) } 
+      (L:AnnCheck,percent) 99.9 &lt; (L:AnnCheck Armed,number) 99.9 &gt; &amp;&amp; 
+      if{ 1 (&gt;L:Pressed_UP,enum) } 
+      (L:AnnCheck,percent) (&gt;L:AnnCheck Armed,number) 	
+
+			<!-- Rudder Pedals --> 	   	  
+	  
+	   (* L *)					
+       (A:RUDDER PEDAL POSITION,percent) -11.9 &gt; (L:PedalsNext,number) -11.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Pedals_Bcw,enum) }
+       (A:RUDDER PEDAL POSITION,percent) -92.9 &lt; (L:PedalsNext,number) -92.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Pedals_Fwd,enum) }
+       (A:RUDDER PEDAL POSITION,percent) near -50 &gt; (L:PedalsNext,number) -50 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Pedals_Mid,enum) } 
+       (A:RUDDER PEDAL POSITION,percent) near -50 &lt; (L:PedalsNext,number) -50 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Pedals_Mid,enum) } 				
+			
+	   (* R *)					
+       (A:RUDDER PEDAL POSITION,percent) 11.9 &lt; (L:PedalsNext,number) 11.9 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Pedals_Bcw,enum) }
+       (A:RUDDER PEDAL POSITION,percent) 92.9 &gt; (L:PedalsNext,number) 92.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Pedals_Fwd,enum) }
+       (A:RUDDER PEDAL POSITION,percent) near 50 &gt; (L:PedalsNext,number) 50 &lt; &amp;&amp; 
+       if{ 1 (&gt;L:Pedals_Mid,enum) } 
+       (A:RUDDER PEDAL POSITION,percent) near 50 &lt; (L:PedalsNext,number) 50 &gt; &amp;&amp; 
+       if{ 1 (&gt;L:Pedals_Mid,enum) } 	  
+	   
+       (A:RUDDER PEDAL POSITION,percent) (&gt;L:PedalsNext,number)    
+
+	   (* Left Brakes *)		   
+       (A:BRAKE LEFT POSITION,percent) 0.01 &lt; (L:BrakesLNext,number) 0.01 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Brakes_Bcw,enum) }
+       (A:BRAKE LEFT POSITION,percent) 99.9 &gt; (L:BrakesLNext,number) 99.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Brakes_Full,enum) } 
+
+       (A:BRAKE LEFT POSITION,percent) (&gt;L:BrakesLNext,number)   	   
+	   
+	   (* Right Brakes *)		   
+       (A:BRAKE RIGHT POSITION,percent) 0.01 &lt; (L:BrakesRNext,number) 0.01 &gt; &amp;&amp;
+       if{ 1 (&gt;L:Brakes_Bcw,enum) }
+       (A:BRAKE RIGHT POSITION,percent) 99.9 &gt; (L:BrakesRNext,number) 99.9 &lt; &amp;&amp;
+       if{ 1 (&gt;L:Brakes_Full,enum) } 
+
+       (A:BRAKE RIGHT POSITION,percent) (&gt;L:BrakesRNext,number)    	  	  
+	  
+			<!-- ADF ARK15 --> 		    	  
+
+	  (* 1 *)				
+      (L:ARK1_KANAL1,number) (L:ARK1_KANAL1 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:ARK1_KANAL1,number) (&gt;L:ARK1_KANAL1 Armed,number) }
+      (L:ARK1_KANAL2,number) (L:ARK1_KANAL2 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:ARK1_KANAL2,number) (&gt;L:ARK1_KANAL2 Armed,number) }
+
+	  (* 2 *)	
+      (L:ARK2_KANAL1,number) (L:ARK2_KANAL1 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:ARK2_KANAL1,number) (&gt;L:ARK2_KANAL1 Armed,number) }
+      (L:ARK2_KANAL2,number) (L:ARK2_KANAL2 Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:ARK2_KANAL2,number) (&gt;L:ARK2_KANAL2 Armed,number) }
+
+			<!-- Course System KS-8 --> 		    	    
+
+      (L:KS8 Mode Selector,number) (L:KS8 Mode Selector Armed,number) !=
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:KS8 Mode Selector,number) (&gt;L:KS8 Mode Selector Armed,number) }
+      (L:KS8 Course Selector,number) (L:KS8 Course Selector Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:KS8 Course Selector,number) (&gt;L:KS8 Course Selector Armed,number) }
+      (L:KS8 Hemisphere Switch,number) (L:KS8 Hemisphere Switch Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:KS8 Hemisphere Switch,number) (&gt;L:KS8 Hemisphere Switch Armed,number) }
+      (L:KS8 GyroUnit Switch,number) (L:KS8 GyroUnit Switch Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Switch,number) (L:KS8 GyroUnit Switch,number) (&gt;L:KS8 GyroUnit Switch Armed,number) }
+      (L:KS8 Latitude Selector,number) (L:KS8 Latitude Selector Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:KS8 Latitude Selector,number) (&gt;L:KS8 Latitude Selector Armed,number) }
+      (L:KS8 Coord Button,number) (L:KS8 Coord Button Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Button,number) (L:KS8 Coord Button,number) (&gt;L:KS8 Coord Button Armed,number) } 
+
+			<!-- Navigator Pointer USh --> 		    	    
+	  
+      (L:USH MagVar Selector,number) (L:USH MagVar Selector Armed,number) !=
+      if{ 1 (&gt;L:Tu134_Selector,number) (L:USH MagVar Selector,number) (&gt;L:USH MagVar Selector Armed,number) }	    
+
+			<!-- Navigator Pointer USh --> 		    	    
+	  
+      (L:NAS1 SAU mode,bool) (L:NAS1 SAU mode Armed,number) != 
+      if{ 1 (&gt;L:IKU1A_Switch,number) (L:NAS1 SAU mode,bool) (&gt;L:NAS1 SAU mode Armed,number) } 	  		
+
+			<!-- NAV Course Knob --> 	
+
+	  (* NAV1 *)				
+      (L:VOR1 hdg,number) (L:VOR1 hdg Armed,number) !=
+      if{ 1 (&gt;L:Course_Knob,number) (L:VOR1 hdg,number) (&gt;L:VOR1 hdg Armed,number) }
+	  (* NAV2 *)	
+      (L:VOR2 hdg,number) (L:VOR2 hdg_T,number) !=
+      if{ 1 (&gt;L:Course_Knob,number) (L:VOR2 hdg,number) (&gt;L:VOR2 hdg_T,number) } 		
+
+			<!-- RSBN Panel --> 
+			
+      (L:RSBN_Course_set,number) (L:RSBN_Course_set Armed,number) !=
+      if{ 1 (&gt;L:RSBN_Knob,number) (L:RSBN_Course_set,number) (&gt;L:RSBN_Course_set Armed,number) }
+      (L:RSBN_Target_angle,number) (L:RSBN_Target_angle Armed,number) !=
+      if{ 1 (&gt;L:RSBN_Knob,number) (L:RSBN_Target_angle,number) (&gt;L:RSBN_Target_angle Armed,number) }
+      (L:RSBN_Target_dist,number) (L:RSBN_Target_dist Armed,number) !=
+      if{ 1 (&gt;L:RSBN_Knob,number) (L:RSBN_Target_dist,number) (&gt;L:RSBN_Target_dist Armed,number) }
+      (L:RSBN_channel1,number) (L:RSBN_channel1 Armed,number) !=
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:RSBN_channel1,number) (&gt;L:RSBN_channel1 Armed,number) }
+      (L:RSBN_channel10,number) (L:RSBN_channel10 Armed,number) !=
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:RSBN_channel10,number) (&gt;L:RSBN_channel10 Armed,number) }
+      (L:RSBN_mode,number) (L:RSBN_mode Armed,number) !=
+      if{ 1 (&gt;L:GALET_SOUND,number) (L:RSBN_mode,number) (&gt;L:RSBN_mode Armed,number) }
+      (L:RSBN_azimuth,number) (L:RSBN_azimuth Armed,number) !=
+      if{ 1 (&gt;L:RSBN_Knob,number) (L:RSBN_azimuth,number) (&gt;L:RSBN_azimuth Armed,number) }
+      (L:RSBN_orbit,number) (L:RSBN_orbit Armed,number) !=
+      if{ 1 (&gt;L:RSBN_Knob,number) (L:RSBN_orbit,number) (&gt;L:RSBN_orbit Armed,number) } 
+
+			<!-- Electric Panel --> 	  
+
+	  (* Engine Generators GS-18TO Voltage Tuner Knobs *)				
+      (L:Gen1_dev,number) (L:Gen1_dev Armed,number) !=
+      if{ 1 (&gt;L:Gen_Knob,number) (L:Gen1_dev,number) (&gt;L:Gen1_dev Armed,number) } 
+      (L:Gen2_dev,number) (L:Gen2_dev Armed,number) !=
+      if{ 1 (&gt;L:Gen_Knob,number) (L:Gen2_dev,number) (&gt;L:Gen2_dev Armed,number) } 
+      (L:Gen3_dev,number) (L:Gen3_dev Armed,number) !=
+      if{ 1 (&gt;L:Gen_Knob,number) (L:Gen3_dev,number) (&gt;L:Gen3_dev Armed,number) } 
+      (L:Gen4_dev,number) (L:Gen4_dev Armed,number) !=
+      if{ 1 (&gt;L:Gen_Knob,number) (L:Gen4_dev,number) (&gt;L:Gen4_dev Armed,number) } 
+
+	  (* APU Generator GS-12TO Voltage Tuner Knob *)	
+      (L:Gena_dev,number) (L:Gena_dev Armed,number) !=
+      if{ 1 (&gt;L:Gen_Knob,number) (L:Gena_dev,number) (&gt;L:Gena_dev Armed,number) } 
+
+			<!-- SPO-4 Check --> 		  
+
+      (L:SPO4_Test,number) (L:SPO4_Test Armed,number) != 
+      if{ 1 (&gt;L:Tu134_Button,number) (L:SPO4_Test,number) (&gt;L:SPO4_Test Armed,number) }	
+
+			
+	  </Value>
+      </Select>
+   </Element>   
+
+      <!-- Key Events --> 
+	  
+      <Keys>
+
+	  <!-- COM1 / COM2 Knobs -->  	  
+
+	  (* COM1 *)  		  
+      <On Event="COM_RADIO_WHOLE_INC">
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM_RADIO_FRACT_INC">
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM_RADIO_WHOLE_DEC">
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM_RADIO_FRACT_DEC">
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+
+	  (* COM2 *)  
+      <On Event="COM2_RADIO_WHOLE_INC">     
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM2_RADIO_FRACT_INC">
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM2_RADIO_WHOLE_DEC">    
+      1 (&gt;L:Tu134_Selector4,number)
+      </On> 
+	  
+      <On Event="COM2_RADIO_FRACT_DEC">     
+      1 (&gt;L:Tu134_Selector4,number)
+      </On>      	  
+
+	  <!-- NAV1 / NAV2 Knobs -->  	  
+	  
+	  (* NAV1 *)  
+      <On Event="NAV1_RADIO_WHOLE_INC">      
+      1 (&gt;L:VOR_Knob,number)     
+      </On> 
+	  
+      <On Event="NAV1_RADIO_FRACT_INC">         
+      1 (&gt;L:VOR_Knob,number)       
+      </On> 
+	  
+      <On Event="NAV1_RADIO_WHOLE_DEC">          
+      1 (&gt;L:VOR_Knob,number)      
+      </On> 
+	  
+      <On Event="NAV1_RADIO_FRACT_DEC">            
+      1 (&gt;L:VOR_Knob,number)       
+      </On> 
+
+	  (* NAV2 *)  	  
+      <On Event="NAV2_RADIO_WHOLE_INC">             
+      1 (&gt;L:VOR_Knob,number) 	  
+      </On> 
+	  
+      <On Event="NAV2_RADIO_FRACT_INC">             
+      1 (&gt;L:VOR_Knob,number)       
+      </On> 
+	  
+      <On Event="NAV2_RADIO_WHOLE_DEC">              
+      1 (&gt;L:VOR_Knob,number)      
+      </On> 
+	  
+      <On Event="NAV2_RADIO_FRACT_DEC">               
+      1 (&gt;L:VOR_Knob,number)       
+      </On> 
+
+	  
+      </Keys>
+   
+</Gauge>
